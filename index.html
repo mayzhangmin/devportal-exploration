@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HSBC API Discovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="HSBC API Discovery home"><span>HSBC</span><strong>API Discovery</strong></a>
+        <nav aria-label="Primary navigation">
+          <a class="nav-link active" href="#explore" data-nav="explore"><i data-lucide="compass"></i>Explore APIs</a>
+          <a class="nav-link" href="#catalogue" data-nav="catalogue"><i data-lucide="library"></i>API catalogue</a>
+          <a class="nav-link" href="#journeys" data-nav="journeys"><i data-lucide="route"></i>Use-case journeys</a>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="support-card"><i data-lucide="sparkles"></i><p>Not sure where to start?</p><button class="text-button" data-action="reset">Explore common tasks</button></div>
+          <button class="profile"><span class="avatar">AM</span><span><strong>Alex Morgan</strong><small>Developer portal</small></span><i data-lucide="chevrons-up-down"></i></button>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar"><p>Developer portal <i data-lucide="chevron-right"></i> API discovery</p><div class="top-actions"><button class="icon-button" aria-label="Help"><i data-lucide="circle-help"></i></button><button class="icon-button" aria-label="Notifications"><i data-lucide="bell"></i></button></div></header>
+
+        <section id="explore-view" class="view active">
+          <div class="intro"><p class="eyebrow">API DISCOVERY</p><h1>What do you want to do?</h1><p>Start with a business outcome. We will surface the right APIs for your market and integration model.</p></div>
+
+          <div class="intent-grid" id="intent-grid">
+            <button class="intent-card selected" data-intent="payments"><span class="intent-icon coral"><i data-lucide="arrow-left-right"></i></span><strong>Move money</strong><small>Make, validate, track, or cancel payments</small><i data-lucide="arrow-up-right"></i></button>
+            <button class="intent-card" data-intent="accounts"><span class="intent-icon blue"><i data-lucide="landmark"></i></span><strong>See accounts & cash</strong><small>Balances, transactions, statements, and reporting</small><i data-lucide="arrow-up-right"></i></button>
+            <button class="intent-card" data-intent="manage-accounts"><span class="intent-icon gold"><i data-lucide="layers-3"></i></span><strong>Manage accounts</strong><small>Create virtual accounts and improve cash visibility</small><i data-lucide="arrow-up-right"></i></button>
+            <button class="intent-card" data-intent="onboarding"><span class="intent-icon green"><i data-lucide="user-round-plus"></i></span><strong>Onboard & connect</strong><small>Activate customers or register an app</small><i data-lucide="arrow-up-right"></i></button>
+            <button class="intent-card" data-intent="trade"><span class="intent-icon plum"><i data-lucide="ship-wheel"></i></span><strong>Trade & securities</strong><small>Trade finance, custody, and fund services</small><i data-lucide="arrow-up-right"></i></button>
+            <button class="intent-card" data-intent="products"><span class="intent-icon teal"><i data-lucide="map-pinned"></i></span><strong>Find products & places</strong><small>Products, branches, ATMs, and FX rates</small><i data-lucide="arrow-up-right"></i></button>
+          </div>
+
+          <section class="filter-panel" aria-label="Refine API results">
+            <div class="filter-copy"><p class="eyebrow">REFINE RESULTS</p><strong>Tell us a little more</strong></div>
+            <label>Market<select id="market"><option value="GLOBAL">All markets</option><option value="HONG KONG">Hong Kong</option><option value="UNITED KINGDOM">United Kingdom</option><option value="SINGAPORE">Singapore</option></select></label>
+            <label>For<select id="audience"><option value="Corporate">Corporate</option><option value="Open Banking">Open Banking third party</option></select></label>
+            <button class="filter-button" id="search-button"><i data-lucide="sliders-horizontal"></i>Show matches</button>
+          </section>
+
+          <section class="results-section" id="catalogue">
+            <div class="section-heading"><div><p class="eyebrow">RECOMMENDED FOR YOU</p><h2>Move money</h2></div><p class="match-count">3 matches <span>based on your selections</span></p></div>
+            <div class="recommendation-grid" id="recommendation-grid"></div>
+          </section>
+        </section>
+
+        <section id="detail-view" class="view detail-view" aria-live="polite"></section>
+      </section>
+    </main>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="data/discovery-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
